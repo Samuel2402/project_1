@@ -17,7 +17,6 @@ db = SQLAlchemy(app)
 #@app.route('/home')
 #def hpme(): 
 #    return "Home page"
-
 # @app.route('/about')
 # def about_page():
 #    return "About page" 
@@ -31,7 +30,7 @@ db = SQLAlchemy(app)
 #if __name__=='__main__':
 #    app.run(debug=True)
 
-# indpent lines of code, i have hashed out the first and last 2 lines (as they are repeats)
+# indegit branch pent lines of code, i have hashed out the first and last 2 lines (as they are repeats)
 
 #################################### old - Cities, Countries ########################################
 
