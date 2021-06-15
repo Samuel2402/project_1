@@ -30,7 +30,7 @@ db = SQLAlchemy(app)
 #if __name__=='__main__':
 #    app.run(debug=True)
 
-# indegit branch pent lines of code, i have hashed out the first and last 2 lines (as they are repeats)
+# indepent lines of code, i have hashed out the first and last 2 lines (as they are repeats)
 
 #################################### old - Cities, Countries ########################################
 
