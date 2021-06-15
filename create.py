@@ -1,10 +1,15 @@
-from app import      #db, Countries, Cities     #db, Users 
+#from __init__ import      #db, Countries, Cities     #db, Users 
 ## from app import Users - as alternative 
 
-db.drop_all()                      #- deletes existing ables 
-db.create_all()                    #- re-populates ables 
+#db.drop_all()                      #- deletes existing ables 
+#db.create_all()                    #- re-populates ables 
 
+############################# latest ###########################################################
 
+from my_project.app import db
+
+db.drop_all() 
+db.create_all()
 
 ###################### old - Cities + Countries #####################################################
 

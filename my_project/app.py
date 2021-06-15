@@ -1,36 +1,17 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from os import getenv
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:02November19961!@34.105.237.106:3306/newdb"    # 'sqlite:///data.db' 
+app.config["SQLALCHEMY_DATABASE_URI"] = getenv('DATABASE_URI')   # 'sqlite:///data.db' 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
 db = SQLAlchemy(app)
 
-############################# INTRO - making a working website ###########################################################
+################################## latest ###########################################################
 
-#from flask import Flask
-
-#app = Flask(__name__)
-
-#@app.route('/')
-#@app.route('/home')
-#def hpme(): 
-#    return "Home page"
-# @app.route('/about')
-# def about_page():
-#    return "About page" 
-
-#@app.route('/squared/<num>')
-#def squared(num):
-#    number = int(num)
-#    result = number*number
-#    return str(result)
-
-#if __name__=='__main__':
-#    app.run(debug=True)
-
-# indepent lines of code, i have hashed out the first and last 2 lines (as they are repeats)
+from my_project import routes
 
 #################################### old - Cities, Countries ########################################
 
@@ -51,6 +32,7 @@ db = SQLAlchemy(app)
 #    first_name = db.Column(db.String(30), nullable=False)
 #    last_name = db.Column(db.String(30), nullable=False)
 
+############################## END #############################################
 
 if __name__ == "__main__":
     app.run(debug=True)
