@@ -4,6 +4,8 @@ from wtforms import StringField, SubmitField # We will only use StringField and 
 from wtforms.validators import DataRequired, Length, ValidationError
 
 app = Flask(__name__)
+
+app.config['SQLALchemy_DATABASE_URI'] = "sqlite:///"
 app.config['SECRET_KEY']='fdghjskayuedbnakcxgahqwoqpqn' #Configure a secret key for CSRF protection.
 
 ########################################### flask set-up #######################################################
@@ -20,8 +22,6 @@ class UserCheck:
         if field.data.lower() in (word.lower() for word in self.banned):
             raise ValidationError(self.message)
 
-##################################################################################################
-
 class myForm(FlaskForm):
     username = StringField('Username', validators=[
         DataRequired(),
@@ -31,7 +31,7 @@ class myForm(FlaskForm):
         ])
     submit = SubmitField('Sign up')
 
-################################### end of flask setup ###############################################################
+################################### app routes ###############################################################
 
 @app.route('/', methods=['GET','POST'])
 def postName():
@@ -42,7 +42,7 @@ def postName():
     else:
         return render_template('home.html', form = form, username="")
 
-##################################################################################################
+######################################### end #########################################################
 
 if __name__ == '__main__':
     app.run(debug=True)
